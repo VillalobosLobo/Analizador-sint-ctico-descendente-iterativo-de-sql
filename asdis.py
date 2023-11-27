@@ -11,6 +11,8 @@ def analisis(cad):
 			sal.append(cad[i])
 		return sal
 
+cad=scan.lineaComando()+['$','','']
+
 #Q(analisis(cad))
 print(analisis(cad))
 print(salida)
