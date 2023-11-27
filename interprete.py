@@ -54,4 +54,37 @@ def identificar(cad,pos):
 	        else:
 		    return identificador(cad,pos)
 	    else:
-		
+		#print(Token(tipoToken.FROM,cad[:4],pos).toString())
+			t.almacenar(tipoToken.FROM,cad[:4],pos)
+			return 4
+	elif cad[:8]=='distinct':
+		if len(cad)>8:
+			if cad[:9]=='distinct ':
+				#print(Token(tipoToken.DISTINCT,cad[:8],pos).toString())
+				t.almacenar(tipoToken.DISTINCT,cad[:8],pos)
+				return 8
+			else:
+				return identificador(cad,pos)
+		else:
+			#print(Token(tipoToken.DISTINCT,cad[:8],pos).toString())
+			t.almacenar(tipoToken.DISTINCT,cad[:8],pos)
+			return 8
+
+	elif cad[0].isdigit() or cad[0].isalpha():
+		return identificador(cad,pos)
+	else:
+		return 0
+	
+def scanerArchivo(cont):
+	j=0
+	bandera=0
+	for i in range(len(cont)):
+		if j>=len(cont):
+			break
+		else:
+			bandera=identificar(cont[j:],j)
+		if bandera>1:
+			j+=bandera
+		else:
+			j+=1
+	return t.obtener()
