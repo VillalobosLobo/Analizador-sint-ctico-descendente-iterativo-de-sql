@@ -100,3 +100,10 @@ def lineaComando():
 			if j>=len(cadena):
 				return t.obtener()
 				break
+else:
+				bandera=identificar(cadena[j:],pos)
+			if bandera>1:
+				j+=bandera
+				pos+=1
+			else:
+				j+=1
