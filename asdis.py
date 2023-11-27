@@ -5,14 +5,24 @@ from tipoToken import tipoToken
 pila=['']
 salida=''
 
+def P(cad):
+	global salida
+	if cad[0]=='ASTERISCO':
+		if cad[1]=='$':
+			salida='Consulta correcta'
+	elif cad[0]=='IDENTIFICADOR':
+		#A(cad)
+	else:
+		salida='Error en P'
+
 def D(cad):
 	global salida
 	if cad[0]=='DISTINCT':
-		#P(cad[1:])
+		P(cad[1:])
 	elif cad[0]=='ASTERISCO':
-		#P(cad)
+		P(cad)
 	elif cad[0]=='IDENTIFICADOR':
-		#P(cad)
+		P(cad)
 	elif cad[0]=='FROM':
 		#Qaux(cad)
 	else:
