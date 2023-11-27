@@ -5,13 +5,27 @@ from tipoToken import tipoToken
 pila=['']
 salida=''
 
+def A2(cad):
+	global salida
+	if cad[0]=='IDENTIFICADOR':
+		pila.append(cad[0])
+		return 2#A3(cad[1:])
+	else:
+		salida='Error en A2'
+		return 0
+
+def A(cad):
+	pos=A2(cad)
+	if pos==1:
+		#A1(cad[1:])
+
 def P(cad):
 	global salida
 	if cad[0]=='ASTERISCO':
 		if cad[1]=='$':
 			salida='Consulta correcta'
 	elif cad[0]=='IDENTIFICADOR':
-		#A(cad)
+		A(cad)
 	else:
 		salida='Error en P'
 
@@ -41,6 +55,6 @@ def analisis(cad):
 
 cad=scan.lineaComando()+['$','','']
 
-#Q(analisis(cad))
+Q(analisis(cad))
 print(analisis(cad))
 print(salida)
