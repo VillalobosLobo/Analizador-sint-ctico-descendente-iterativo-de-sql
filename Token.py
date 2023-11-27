@@ -14,3 +14,17 @@ class Token():
       self.salida=[]'''
 
   def toString(self):
+    return '<'+str(self.tipo)+' '+str(self.lexema)+' '+str(self.posicion)+'>'
+
+  def almacenar(self,tipo,lexema,posicion):
+    entrada=['','','']
+    entrada[0]=tipo
+    entrada[1]=lexema
+    entrada[2]=posicion
+    self.salida+=entrada
+
+  def imprimirEstruct(self):
+    print(self.salida)
+
+  def obtener()
+      
