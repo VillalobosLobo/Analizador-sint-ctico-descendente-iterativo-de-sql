@@ -88,3 +88,15 @@ def scanerArchivo(cont):
 		else:
 			j+=1
 	return t.obtener()
+def lineaComando():
+	#os.system('clear')
+	pos=1
+	while True:
+		j=0
+		bandera=0
+		print('\n>>> ',end='')
+		cadena=input()
+		for i in range(len(cadena)):
+			if j>=len(cadena):
+				return t.obtener()
+				break
